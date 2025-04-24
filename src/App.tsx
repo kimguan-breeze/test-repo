@@ -14,6 +14,7 @@ function App() {
         <BreezePaymentPage
           pageId="page_f7e174cf6a9a0962"
           clientSecret="pcs_7c19cb64a0aa2f2e29d4478ad5d233e2199d3ea9"
+          sandbox
         />
       </div>
 
