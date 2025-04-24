@@ -10,13 +10,14 @@ function App() {
 
   return (
     <>
-      <div className="w-[80vw] h-[80vh]">
+      <div style={{ width: "80vw", height: "80vh" }}>
         <BreezePaymentPage
           pageId="page_208f78bbd28aeab6"
           clientSecret="pcs_246e1d5696034982eb8701599bbcc7331c264619"
           sandbox
         />
-      </div>{" "}
+      </div>
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
