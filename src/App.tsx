@@ -12,8 +12,8 @@ function App() {
     <>
       <div style={{ width: "80vw", height: "80vh" }}>
         <BreezePaymentPage
-          pageId="page_31d996bf6463727a"
-          clientSecret="pcs_2057913b84c6982956718b52d9319adb4b63118f"
+          pageId="page_6533bc8c3bcd35a5"
+          clientSecret="pcs_58d255fbb151fda440128ff9310b0f1db24467fe"
           sandbox
         />
       </div>
