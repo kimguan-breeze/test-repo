@@ -6,7 +6,7 @@ function App() {
   const [session, setSession] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:35000/v1/session", {
+    fetch("https://da9daf1d68a7.ngrok-free.app/v1/status", {
       credentials: "include", // This is correct for sending cookies
     })
       .then((response) => {
