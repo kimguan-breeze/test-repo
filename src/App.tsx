@@ -1,45 +1,31 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect, useState } from "react";
 import "./App.css";
-import { BreezePaymentPage } from "@breeze.cash/ui";
 import "@breeze.cash/ui/styles.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [session, setSession] = useState(null);
 
-  return (
-    <>
-      <div style={{ width: "80vw", height: "80vh" }}>
-        <BreezePaymentPage
-          pageId="page_6533bc8c3bcd35a5"
-          clientSecret="pcs_58d255fbb151fda440128ff9310b0f1db24467fe"
-          sandbox
-        />
-      </div>
+  useEffect(() => {
+    fetch("http://127.0.0.1:35000/v1/session", {
+      credentials: "include", // This is correct for sending cookies
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log({ data });
+        setSession(data.data.session);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle error state appropriately
+      });
+  }, []);
 
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
+  return <>{session}</>;
 }
 
 export default App;
