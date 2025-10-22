@@ -30,7 +30,7 @@ function App() {
   return (
     <iframe
       style={{ width: "100%", height: "100vh" }}
-      src="https://pay.qa.breeze.cash/page_fb50a76c6f64f62f/pcs_e670227fee25bef86462d11e58f86437aa80882a/card?livemode=false"
+      src="https://link.qa.breeze.cash/link/plink_80126366fcbaa311"
       allow="payment"
     ></iframe>
   );
