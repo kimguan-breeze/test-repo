@@ -30,8 +30,8 @@ function App() {
   return (
     <iframe
       style={{ width: "100%", height: "100vh" }}
-      src="https://link.qa.breeze.cash/link/plink_80126366fcbaa311"
-      allow="payment"
+      src="https://pay.qa.breeze.cash/page_bbdbd7d154d3ab18/pcs_51e903ae60ef00b3c2e00cc473c307b4826b7654/card?livemode=false"
+      allow="payment https://pay.qa.breeze.cash"
     ></iframe>
   );
 }
